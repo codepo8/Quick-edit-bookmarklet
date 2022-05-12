@@ -1,4 +1,5 @@
 # Quick-edit-bookmarklet
+
 A bookmarklet to make quick edits to any web site
 
-<a href="javascript:(function(){document.designMode='on';s=document.createElement('style');s.innerHTML="body::before{content:'✏️ Edit Mode (ESC to end)';padding:1em;background:white;color:black;display:block;margin:1em;font-size:30px;border:5px solid green;}";document.body.appendChild(s);window.scrollTo(0,0);document.addEventListener('keyup',e=>{if(e.key==='Escape'){document.designMode='off';document.body.lastChild.remove();}})})();)">Quick Edit</a>
+[Go to the page for more info](https://codepo8.github.io/Quick-edit-bookmarklet/)
