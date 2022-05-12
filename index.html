@@ -4,44 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quick Edit Bookmarklet</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 2vh;
-            margin: 1em auto;
-            max-width: 30em;
-            padding: 0 1em;
-        }
-        a {
-            color: #369;
-        }
-        .bookmarklet:not([href]) {display: none}
-        .bookmarklet[href] {
-            display: inline-block;
-            padding: .5em;
-            margin: 1em 0;
-            border: 1px solid #000;
-            background-color: #369;
-            color: #fff;
-        }
-    </style>
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Quick Edit Bookmarklet</h1>
-    <p>This is a bookmarklet that make the current website editable. You can change the content around and when you hit `ESC` you go back to normal mode. Notice that this is not permanent, reloading the page will undo your changes. This should only make it easier to edit a page before creating a screenshot or similar tasks.</p>
-    <p>Drag the following link to your bookmarks bar to get the functionality.</p>
+    <header>
+        <h1>Quick Edit Bookmarklet</h1>
+    </header>
+    <section>
+        <p>This is a bookmarklet that make the current website editable. You can change the content around and when you hit `ESC` you go back to normal mode. Notice that this is not permanent, reloading the page will undo your changes. This should only make it easier to edit a page before creating a screenshot or similar tasks.</p>
+        <p>Drag the following link to your bookmarks bar to get the functionality.</p>
 
-    <p><a class="bookmarklet" id="qe">Quick Edit</a></p>
-    
-    <p>
-       Written by <a href="https://christianheilmann.com">Chris Heilmann</a>, 
-       source code is <a href="https://github.com/codepo8/Quick-edit-bookmarklet">available on GitHub</a>.
-    </p>
-
+        <p class="bookmarklet"><a id="bml">Quick Edit</a></p>
+    </section>
+    <footer>
+        <p>
+           Written by <a href="https://christianheilmann.com">Chris Heilmann</a>, 
+           source code is <a href="https://github.com/codepo8/Quick-edit-bookmarklet">available on GitHub</a>.
+        </p>
+    </footer>
 <script>
-    fetch('quickedit.js').then(response => response.text()).then(script => {
-        const qe = document.querySelector('#qe');
+    fetch('bml-code.js').then(response => response.text()).then(script => {
+        const qe = document.querySelector('#bml');
         let packedScript = script.replace(/\n\s+/g,'');
         qe.href = "javascript:"+script;    
     }).catch(console.error);

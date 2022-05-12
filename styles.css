@@ -1,0 +1,79 @@
+:root {
+    --canvas: #eee;
+    --body: #f8f8f8;
+    --text: #000;
+    --shadow: #666;
+    --h1: green;
+    --separator: #999;
+    --link: #369;
+    --bookmarkbg: #369;
+    --bookmarkcolour: #fff;
+    --buttonhover: #69c;
+    --buttonhovertext: #333;
+    --footercolour: #999;
+    --footerbg: #666;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+    --canvas: #111;
+    --body: #222;
+    --text: #ccc;
+    --h1: orange;
+    --shadow: #000;
+    --separator: #999;
+    --link: #369;
+    --bookmarkbg: #369;
+    --buttonhover: #69c;
+    --buttonhovertext: #333;
+    --bookmarkcolour: #fff;
+    --footercolour: #999;
+    --footerbg: #666;
+    }
+}
+html {
+    background: var(--canvas);
+    padding: 1em;
+}
+body {
+    font-family: Segoe UI, Arial, Helvetica, sans-serif;
+    color: var(--text);
+    font-size: 2vh;
+    margin: 0 auto;
+    max-width: 30em;
+    padding: .5em 1em;
+    background: var(--body);
+    box-shadow: 2px 2px 10px var(--shadow);
+}
+h1 {
+    border-bottom: 1px solid var(--separator);
+    font-weight: normal;
+    color: var(--h1);
+}
+a {
+    color: var(--link);
+}
+.bookmarklet {
+    display: flex;
+    align-items: center;
+}
+.bookmarklet a:not([href]) {display: none}
+.bookmarklet a[href] {
+    border-radius: 10px;
+    display: inline-block;
+    padding: .5em;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 1em auto;
+    background-color: var(--bookmarkbg);
+    color: var(--bookmarkcolour);
+}
+.bookmarklet a:hover {
+    background: var(--buttonhover);
+    color: var(--buttonhovertext);
+}
+footer {
+    color: var(--footercolour);
+}
+footer a {
+    color: var(--footerbg);
+}
