@@ -23,9 +23,7 @@
         }
         .bookmarklet a {
             color: #fff;
-
         }
-
     </style>
 
 </head>
@@ -40,13 +38,10 @@
 
 <script>
     fetch('quickedit.js').then(response => response.text()).then(script => {
-        const qe = document.getElementById('qe');
+        const qe = document.querySelector('#qe');
         let packedScript = script.replace(/\n\s+/g,'');
-        console.log(packedScript);
         qe.href = "javascript:"+script;    
     }).catch(console.error);
 </script>
 </body>
 </html>
-
-
