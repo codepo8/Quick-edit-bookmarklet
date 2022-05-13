@@ -23,7 +23,7 @@
         </p>
     </footer>
 <script>
-    fetch('bml-code.js').then(response => response.text()).then(script => {
+    fetch('quickedit.js').then(response => response.text()).then(script => {
         const qe = document.querySelector('#bml');
         let packedScript = script.replace(/\n\s+/g,'');
         qe.href = "javascript:"+script;    
